@@ -13,6 +13,7 @@ const handleShortUrl = async (req, res) => {
       redirectUrl: body.url,
       totalClicks: [],
     });
+    await shortUrl.save();
     res.json({ id: shortId });
   } catch (err) {
     console.log(err);
