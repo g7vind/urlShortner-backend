@@ -23,7 +23,7 @@ const handleShortUrl = async (req, res) => {
 const handleRedirect = async (req, res) => {
   try {
     const shortId = req.params.shortID;
-    const entry = await Url.findOneAndUpdate({shortId,},{$push: {totalClicks: {timestamp: Date.now(),},},});
+    const entry = await Url.findOne({ shortId });
     console.log(entry);
     res.redirect(entry.redirectUrl);
   } catch (err) {

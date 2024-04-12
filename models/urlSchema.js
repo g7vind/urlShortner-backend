@@ -9,7 +9,6 @@ const urlSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    totalClicks: [{ timestamp: { type: Number } }]
 }, { timestamps: true });
 
 const Url = mongoose.model('Url', urlSchema);
